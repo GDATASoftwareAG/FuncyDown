@@ -7,6 +7,10 @@
     <Authors>Stefan Hausotte</Authors>
     <Company>G DATA Software AG</Company>
     <Description>A simple functional library do create Markdown files.</Description>
+    <RepositoryUrl>https://github.com/GDATASoftwareAG/FuncyDown</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/GDATASoftwareAG/FuncyDown</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/GDATASoftwareAG/FuncyDown/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>f# markdown fsharp</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

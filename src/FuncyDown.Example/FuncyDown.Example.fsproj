@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="example.md" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
