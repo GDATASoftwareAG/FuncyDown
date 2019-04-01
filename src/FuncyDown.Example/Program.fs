@@ -1,5 +1,4 @@
-﻿open System
-open FuncyDown.Element
+﻿open FuncyDown.Element
 open FuncyDown.Document
 open System.IO
 
