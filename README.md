@@ -115,3 +115,13 @@ emptyDocument
 |> addHorizontalRule
         
 ```
+### Export to string
+
+To save the generated Markdown document on disk or use it otherwise, you can export the document to a formatted Markdown string.
+
+```fsharp
+
+...
+markdownDocument |> asString
+        
+```

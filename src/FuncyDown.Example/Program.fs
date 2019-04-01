@@ -83,6 +83,12 @@ emptyDocument
 |> addHorizontalRule
         """
 
+    let asStringCode =
+        """
+...
+markdownDocument |> asString
+        """
+
     let mdDoc = 
         emptyDocument
         |> addH1 "FuncyDown"
@@ -113,6 +119,9 @@ emptyDocument
         |> addH3 "Horizontal Rule"
         |> addParagraph "To add a simple horizontal rule use the code below."
         |> addBlockCode {Code = horRuleCode; Language = Some("fsharp")}
+        |> addH3 "Export to string"
+        |> addParagraph "To save the generated Markdown document on disk or use it otherwise, you can export the document to a formatted Markdown string."
+        |> addBlockCode {Code = asStringCode; Language = Some("fsharp")}
 
     File.WriteAllText("../../../../../README.md", mdDoc |> asString)
     0 // return an integer exit code
