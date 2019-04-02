@@ -15,7 +15,7 @@ steps:
   displayName: 'Run Unit-Tests'
   inputs:
    command: test
-   projects: '**/*test/*.csproj'
+   projects: '**\test\**\*.csproj'
    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
 - task: DotNetCoreCLI@2
@@ -25,6 +25,8 @@ steps:
     command: 'pack'
     packagesToPack: '**\src\**\FuncyDown.csproj'
     configuration: $(buildConfiguration)
+
+- powershell: ls $(build.artifactStagingDirectory)
 
 - task: NuGetCommand@2
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
