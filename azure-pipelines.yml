@@ -23,7 +23,7 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     command: 'pack'
-    packagesToPack: '**\src\**\*.csproj'
+    packagesToPack: '**\src\**\FuncyDown.csproj'
     configuration: $(buildConfiguration)
 
 - task: NuGetCommand@2
