@@ -15,7 +15,7 @@ steps:
   displayName: 'Run Unit-Tests'
   inputs:
    command: test
-   projects: '\test\**\*.fsproj'
+   projects: '**/*test/*.fsproj'
    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
 - task: DotNetCoreCLI@2

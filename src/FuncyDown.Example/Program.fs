@@ -5,6 +5,15 @@ open System.IO
 [<EntryPoint>]
 let main argv =
 
+    let badges =
+        """
+[![license](https://img.shields.io/github/license/GDATASoftwareAG/FuncyDown.svg)](https://raw.githubusercontent.com/GDATASoftwareAG/FuncyDown/master/LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/FuncyDown.svg)](https://www.nuget.org/packages/FuncyDown/)
+[![NuGet](https://img.shields.io/nuget/dt/FuncyDown.svg)](https://www.nuget.org/packages/FuncyDown/)
+[![Build](https://img.shields.io/azure-devops/build/gdatasoftware/FuncyDown/2.svg)](https://dev.azure.com/gdatasoftware/FuncyDown/_build?definitionId=4)
+[![Test](https://img.shields.io/azure-devops/tests/gdatasoftware/FuncyDown/2.svg)](https://dev.azure.com/gdatasoftware/FuncyDown/_build?definitionId=4)
+        """
+
     let headerCode =
         """
 emptyDocument
@@ -91,6 +100,7 @@ markdownDocument |> asString
     let mdDoc = 
         emptyDocument
         |> addH1 "FuncyDown"
+        |> addParagraph badges
         |> addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you currently read is generated with FuncyDown."
         |> addH2 "How to use"
         |> addParagraph "These examples show how to use FuncyDown in your application to create a Markdown file."
