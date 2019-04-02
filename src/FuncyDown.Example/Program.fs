@@ -101,7 +101,7 @@ markdownDocument |> asString
         emptyDocument
         |> addH1 "FuncyDown"
         |> addParagraph badges
-        |> addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you currently read is generated with FuncyDown."
+        |> addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you are currently reading is generated with FuncyDown."
         |> addH2 "How to use"
         |> addParagraph "These examples show how to use FuncyDown in your application to create a Markdown file."
         |> addH3 "Headers"
