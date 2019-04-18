@@ -1,4 +1,4 @@
-![FuncyDown Logo](https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/facebook_cover_photo_1.png?raw=true "Markdown - FuncyDown")
+![FuncyDown Logo](https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/linkedin_banner_image_1.png?raw=true "Markdown - FuncyDown")
 # FuncyDown
 
 
