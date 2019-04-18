@@ -11,6 +11,7 @@
     <PackageProjectUrl>https://github.com/GDATASoftwareAG/FuncyDown</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/GDATASoftwareAG/FuncyDown/master/LICENSE</PackageLicenseUrl>
     <PackageTags>f# markdown fsharp</PackageTags>
+    <PackageIconUrl>https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/icon.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
