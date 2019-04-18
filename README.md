@@ -1,6 +1,4 @@
 ![FuncyDown Logo](https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/linkedin_banner_image_1.png?raw=true "Markdown - FuncyDown")
-# FuncyDown
-
 
 [![license](https://img.shields.io/github/license/GDATASoftwareAG/FuncyDown.svg)](https://raw.githubusercontent.com/GDATASoftwareAG/FuncyDown/master/LICENSE)
 [![NuGet](https://img.shields.io/nuget/v/FuncyDown.svg)](https://www.nuget.org/packages/FuncyDown/)
