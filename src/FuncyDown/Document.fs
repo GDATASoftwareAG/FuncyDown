@@ -2,6 +2,7 @@
 
 open Element
 open System.Text
+open System
 
 module Document =
 
@@ -105,3 +106,7 @@ module Document =
 
     let addHorizontalRule document =
         append HorizontalRule document
+
+    let addNewline document =
+        let nl = Text(Environment.NewLine)
+        append nl document
