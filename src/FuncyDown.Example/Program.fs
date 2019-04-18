@@ -99,6 +99,7 @@ markdownDocument |> asString
 
     let mdDoc = 
         emptyDocument
+        |> addImage {Target = "./resources/facebook_cover_photo_1.png"; Title = Some("Markdown - FuncyDown"); AltText = "FuncyDown Logo"}
         |> addH1 "FuncyDown"
         |> addParagraph badges
         |> addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you are currently reading is generated with FuncyDown."
