@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Copyright>Copyright (C) 2019 G DATA Software AG</Copyright>
-    <Version>1.0.1</Version>
+    <Copyright>Copyright (C) 2019 G DATA CyberDefense AG</Copyright>
+    <Version>1.0.2</Version>
     <Authors>Stefan Hausotte</Authors>
-    <Company>G DATA Software AG</Company>
+    <Company>G DATA CyberDefense AG</Company>
     <Description>A simple functional library do create Markdown files.</Description>
     <RepositoryUrl>https://github.com/GDATASoftwareAG/FuncyDown</RepositoryUrl>
     <PackageProjectUrl>https://github.com/GDATASoftwareAG/FuncyDown</PackageProjectUrl>
