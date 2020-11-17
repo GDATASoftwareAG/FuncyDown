@@ -1,8 +1,7 @@
 # Azure DevOps Build Pipeline for FuncyDown
 
 trigger:
-  - master
-  - features/*
+  - '*'
 
 pool:
   vmImage: 'windows-latest'
