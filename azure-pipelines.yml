@@ -5,12 +5,19 @@ trigger:
   - features/*
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'windows-latest'
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: UseDotNet@2 
+  displayName: "Use .NET Core 5.x"
+  inputs:
+    version: '5.x'
+    packageType: sdk
+    
 - task: DotNetCoreCLI@2
   displayName: 'Run Unit-Tests'
   inputs:
