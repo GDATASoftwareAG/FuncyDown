@@ -41,7 +41,7 @@ let ``addBlockCode appends a given code block to the document`` () =
 
 [<Fact>]
 let ``asString returns a formatted code block given some code block`` () =
-    let expected = sprintf "```language%sSome code%s```%s" Environment.NewLine Environment.NewLine Environment.NewLine
+    let expected = sprintf $"```language{Environment.NewLine}Some code{Environment.NewLine}```{Environment.NewLine}"   
     let document = addBlockCode code emptyDocument
     
     let actual = document |> asString

@@ -3,7 +3,7 @@ open FuncyDown.Document
 open System.IO
 
 [<EntryPoint>]
-let main argv =
+let main _argv =
 
     let badges =
         """

@@ -19,7 +19,7 @@ let ``addHorizontalRule appends a horizontal rule to the document`` () =
 
 [<Fact>]
 let ``asString returns a formatted horizontal rule.`` () =
-    let expected = sprintf "---%s" Environment.NewLine
+    let expected = sprintf $"---{Environment.NewLine}" 
     let document = addHorizontalRule emptyDocument
     
     let actual = document |> asString

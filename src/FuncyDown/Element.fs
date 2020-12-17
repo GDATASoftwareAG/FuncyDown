@@ -41,19 +41,19 @@ module Element =
             sprintf "%s%s%s" text Environment.NewLine Environment.NewLine
 
         match header.Size with
-        | H1 -> sprintf "# %s" (textWithNewLines header.Text)
-        | H2 -> sprintf "## %s" (textWithNewLines header.Text)
-        | H3 -> sprintf "### %s" (textWithNewLines header.Text)
-        | H4 -> sprintf "#### %s" (textWithNewLines header.Text)
-        | H5 -> sprintf "##### %s" (textWithNewLines header.Text)
-        | H6 -> sprintf "###### %s" (textWithNewLines header.Text)
+        | H1 -> sprintf $"# {(textWithNewLines header.Text)}" 
+        | H2 -> sprintf $"## {(textWithNewLines header.Text)}"
+        | H3 -> sprintf $"### {(textWithNewLines header.Text)}"
+        | H4 -> sprintf $"#### {(textWithNewLines header.Text)}"
+        | H5 -> sprintf $"##### {(textWithNewLines header.Text)}"
+        | H6 -> sprintf $"###### {(textWithNewLines header.Text)}"
 
     let tableAsString table =
-        let sb = new StringBuilder()
+        let sb = StringBuilder()
         let formatRow columns = "|" + String.concat "|" columns + "|"
         let header = formatRow table.Headers
         let separator = formatRow (List.init table.Headers.Length (fun _ -> "---"))
-        let rows = table.Rows |> List.map (fun row -> formatRow row)
+        let rows = table.Rows |> List.map formatRow
 
         sb.AppendLine(header) |> ignore
         sb.AppendLine(separator) |> ignore
@@ -62,16 +62,16 @@ module Element =
         sb.ToString()
 
     let paragraphAsString paragraph =
-        sprintf "%s%s%s" paragraph Environment.NewLine Environment.NewLine
+        sprintf $"{paragraph}{Environment.NewLine}{Environment.NewLine}"
 
     let emphasisAsString emphasis =
-        sprintf "*%s*" emphasis
+        sprintf $"*{emphasis}*"
 
     let strongEmphasisAsString emphasis =
-        sprintf "**%s**" emphasis
+        sprintf $"**{emphasis}**"
 
     let strikeThroughAsString strikeThrough =
-        sprintf "~~%s~~" strikeThrough
+        sprintf $"~~{strikeThrough}~~"
 
     let listAsString list preGen =
         let rec createList items cnt (sb: StringBuilder) =
@@ -83,7 +83,7 @@ module Element =
             | [] -> sb
             | head::tail -> createList tail (cnt + 1) (appendItem head (preGen cnt) sb)
 
-        let sb = new StringBuilder()
+        let sb = StringBuilder()
         let sbList = createList list 1 sb
         sbList.ToString()
 
@@ -97,27 +97,27 @@ module Element =
 
     let linkAsString (link: Link) =
         match link.Title with
-        | None -> sprintf "[%s](%s)" link.Text link.Target
-        | Some title -> sprintf "[%s](%s \"%s\")" link.Text link.Target title
+        | None -> sprintf $"[{link.Text}]({link.Target})"
+        | Some title -> sprintf $"[{link.Text}]({link.Target} \"{title}\")"   
 
     let imageAsString (image: Image) =
         match image.Title with
-        | None -> sprintf "![%s](%s)" image.AltText image.Target
-        | Some title -> sprintf "![%s](%s \"%s\")" image.AltText image.Target title
+        | None -> sprintf $"![{image.AltText}]({image.Target})"  
+        | Some title -> sprintf $"![{image.AltText}]({image.Target} \"{title}\")"   
         
     let inlineCodeAsString code =
-        sprintf "`%s`" code.Code
+        sprintf $"`{code.Code}`" 
 
     let blockCodeAsString code =
         match code.Language with
-        | None -> sprintf "```%s%s%s```%s" Environment.NewLine code.Code Environment.NewLine Environment.NewLine
-        | Some lang -> sprintf "```%s%s%s%s```%s" lang Environment.NewLine code.Code Environment.NewLine Environment.NewLine
+        | None -> sprintf $"```{Environment.NewLine}{code.Code}{Environment.NewLine}```{Environment.NewLine}"    
+        | Some lang -> sprintf $"```{lang}{Environment.NewLine}{code.Code}{Environment.NewLine}```{Environment.NewLine}"     
 
     let blockQuoteAsString quote =
-        sprintf "> %s" quote
+        sprintf $"> {quote}" 
 
     let horizontalRuleAsString =
-        sprintf "---%s" Environment.NewLine
+        sprintf $"---{Environment.NewLine}" 
 
     let asString element =
         match element with

@@ -35,8 +35,8 @@ let ``asString returns a formatted table given a table with headers and rows``()
     sb.AppendLine("|---|---|") |> ignore
     sb.AppendLine("|R1C1|R1C2|") |> ignore
     sb.AppendLine("|R2C1|R2C2|") |> ignore
-    let exepected = sb.ToString()
+    let expected = sb.ToString()
 
     let actual = document |> asString
 
-    actual |> should equal exepected
+    actual |> should equal expected

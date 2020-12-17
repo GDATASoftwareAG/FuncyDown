@@ -17,7 +17,7 @@ module Document =
         {document with Elements = (List.append document.Elements [element]) }
 
     let asString document =
-        let sb = new StringBuilder()
+        let sb = StringBuilder()
 
         let elementAsString (sb: StringBuilder) element =
             sb.Append(asString element)
