@@ -1,22 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
     <Copyright>Copyright (C) 2019 G DATA CyberDefense AG</Copyright>
-    <Version>1.0.4</Version>
+    <Version>1.1.0</Version>
     <Authors>Stefan Hausotte</Authors>
     <Company>G DATA CyberDefense AG</Company>
     <Description>A simple functional library do create Markdown files.</Description>
     <RepositoryUrl>https://github.com/GDATASoftwareAG/FuncyDown</RepositoryUrl>
     <PackageProjectUrl>https://github.com/GDATASoftwareAG/FuncyDown</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/GDATASoftwareAG/FuncyDown/master/LICENSE</PackageLicenseUrl>
-    <PackageTags>f# markdown fsharp</PackageTags>
+    <PackageTags>f# markdown fsharp fable</PackageTags>
     <PackageIconUrl>https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/icon.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="Element.fs" />
     <Compile Include="Document.fs" />
+  </ItemGroup>
+
+  <!-- Add source files to "fable" folder in Nuget package -->
+  <ItemGroup>
+      <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
   </ItemGroup>
 
 </Project>
