@@ -26,7 +26,7 @@ emptyDocument
 |> addH4 "Header size 4"
 |> addH5 "Header size 5"
 |> addH6 "Header size 6"
-|> addHeader 3 "Header of specific size (example 3)"
+|> addHeader H3 "Header of specific size (example 3)"
         
 ```
 ### Working with text
