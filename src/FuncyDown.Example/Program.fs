@@ -16,6 +16,9 @@ let main _argv =
 
     let headerCode =
         """
+open FuncyDown.Element
+open FuncyDown.Document
+
 emptyDocument
 |> addH1 "Header size 1"
 |> addH2 "Header size 2"

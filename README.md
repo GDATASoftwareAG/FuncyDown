@@ -19,6 +19,9 @@ You can easily add headers of different size to your Markdown document.
 
 ```fsharp
 
+open FuncyDown.Element
+open FuncyDown.Document
+
 emptyDocument
 |> addH1 "Header size 1"
 |> addH2 "Header size 2"
