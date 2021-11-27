@@ -16,6 +16,9 @@ let main _argv =
 
     let headerCode =
         """
+open FuncyDown.Element
+open FuncyDown.Document
+
 emptyDocument
 |> addH1 "Header size 1"
 |> addH2 "Header size 2"
@@ -23,7 +26,7 @@ emptyDocument
 |> addH4 "Header size 4"
 |> addH5 "Header size 5"
 |> addH6 "Header size 6"
-|> addHeader 3 "Header of specific size (example 3)"
+|> addHeader H3 "Header of specific size (example 3)"
         """
 
     let textCode = 
