@@ -1,6 +1,7 @@
 ﻿open FuncyDown.Element
 open FuncyDown.Document
 open System.IO
+open FuncyDown
 
 [<EntryPoint>]
 let main _argv =
@@ -94,47 +95,69 @@ emptyDocument
 |> addHorizontalRule
         """
 
+    let toDocCode =
+        """
+let document = Document.toDoc [
+    addH1 "FuncyDown is fancy!"
+    addParagraph "Lemonade was a popular drink, and it still is!"
+]
+        """
+
+    let renderCode =
+        """
+let markdown = Document.render [
+  addH1 "FuncyDown is fancy!"
+  addParagraph "Lemonade was a popular drink, and it still is!"
+]
+        """
+
     let asStringCode =
         """
 ...
 markdownDocument |> asString
         """
 
-    let mdDoc = 
-        emptyDocument
-        |> addImage {Target = "https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/linkedin_banner_image_1.png?raw=true"; Title = Some("Markdown - FuncyDown"); AltText = "FuncyDown Logo"}
-        |> addNewline
-        |> addParagraph badges
-        |> addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you are currently reading is generated with FuncyDown."
-        |> addH2 "How to use"
-        |> addParagraph "These examples show how to use FuncyDown in your application to create a Markdown file."
-        |> addH3 "Headers"
-        |> addParagraph "You can easily add headers of different size to your Markdown document."
-        |> addBlockCode {Code = headerCode; Language = Some("fsharp")}
-        |> addH3 "Working with text"
-        |> addParagraph "There are several option to work with text."
-        |> addBlockCode {Code = textCode; Language = Some("fsharp")}
-        |> addH3 "Tables"
-        |> addParagraph "Adding a table is also very easy."
-        |> addBlockCode {Code = tableCode; Language = Some("fsharp")}
-        |> addH3 "Lists"
-        |> addParagraph "You can create ordered and unordered list with sub-items."
-        |> addBlockCode {Code = listCode; Language = Some("fsharp")}
-        |> addH3 "Links and Images"
-        |> addParagraph "You can add a link to an internal or external reference and to images which will be displayed in the Markdown document."
-        |> addBlockCode {Code = linkImageCode; Language = Some("fsharp")}
-        |> addH3 "Code"
-        |> addParagraph "To add code, you have two option. Either as in-line code or as a code block."
-        |> addBlockCode {Code = codeCode; Language = Some("fsharp")}
-        |> addH3 "Block Quote"
-        |> addParagraph "Sometimes it's useful to have a block quote to highlight some text or quote a source."
-        |> addBlockCode {Code = blockQuoteCode; Language = Some("fsharp")}
-        |> addH3 "Horizontal Rule"
-        |> addParagraph "To add a simple horizontal rule use the code below."
-        |> addBlockCode {Code = horRuleCode; Language = Some("fsharp")}
-        |> addH3 "Export to string"
-        |> addParagraph "To save the generated Markdown document on disk or use it otherwise, you can export the document to a formatted Markdown string."
-        |> addBlockCode {Code = asStringCode; Language = Some("fsharp")}
+    let mdDoc = Document.render [
+        addImage {Target = "https://github.com/GDATASoftwareAG/FuncyDown/blob/master/resource/linkedin_banner_image_1.png?raw=true"; Title = Some("Markdown - FuncyDown"); AltText = "FuncyDown Logo"}
+        addNewline
+        addParagraph badges
+        addParagraph "FuncyDown is a very simple library to create Markdown files written in F#. The readme you are currently reading is generated with FuncyDown."
+        addH2 "How to use"
+        addParagraph "These examples show how to use FuncyDown in your application to create a Markdown file."
+        addH3 "Headers"
+        addParagraph "You can easily add headers of different size to your Markdown document."
+        addBlockCode {Code = headerCode; Language = Some("fsharp")}
+        addH3 "Working with text"
+        addParagraph "There are several option to work with text."
+        addBlockCode {Code = textCode; Language = Some("fsharp")}
+        addH3 "Tables"
+        addParagraph "Adding a table is also very easy."
+        addBlockCode {Code = tableCode; Language = Some("fsharp")}
+        addH3 "Lists"
+        addParagraph "You can create ordered and unordered list with sub-items."
+        addBlockCode {Code = listCode; Language = Some("fsharp")}
+        addH3 "Links and Images"
+        addParagraph "You can add a link to an internal or external reference and to images which will be displayed in the Markdown document."
+        addBlockCode {Code = linkImageCode; Language = Some("fsharp")}
+        addH3 "Code"
+        addParagraph "To add code, you have two option. Either as in-line code or as a code block."
+        addBlockCode {Code = codeCode; Language = Some("fsharp")}
+        addH3 "Block Quote"
+        addParagraph "Sometimes it's useful to have a block quote to highlight some text or quote a source."
+        addBlockCode {Code = blockQuoteCode; Language = Some("fsharp")}
+        addH3 "Horizontal Rule"
+        addParagraph "To add a simple horizontal rule use the code below."
+        addBlockCode {Code = horRuleCode; Language = Some("fsharp")}
+        addH3 "Create Document from elements"
+        addParagraph "As an alternative to the pipe operator, the `toDoc` function can be used to construct a Markdown document."
+        addBlockCode {Code = toDocCode; Language = Some("fsharp")}
+        addH3 "Render Document"
+        addParagraph "The render function writes directly to a Markdown string."
+        addBlockCode {Code = renderCode; Language = Some("fsharp")}
+        addH3 "Export to string"
+        addParagraph "To save the generated Markdown document on disk or use it otherwise, you can export the document to a formatted Markdown string."
+        addBlockCode {Code = asStringCode; Language = Some("fsharp")}
+        ]
 
-    File.WriteAllText("../../../../../README.md", mdDoc |> asString)
+    File.WriteAllText("../../../../../README.md", mdDoc)
     0 // return an integer exit code

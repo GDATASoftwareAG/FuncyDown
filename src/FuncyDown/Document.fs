@@ -30,6 +30,10 @@ module Document =
 
         elementsAsOneString sb document.Elements
 
+    let toDoc adds = adds |> List.fold (|>) emptyDocument
+    
+    let render adds = toDoc adds |> asString
+
     let addHeader header text document =
         let header = Header({Size = header; Text = text})
         append header document

@@ -125,6 +125,30 @@ emptyDocument
 |> addHorizontalRule
         
 ```
+### Create Document from elements
+
+As an alternative to the pipe operator, the `toDoc` function can be used to construct a Markdown document.
+
+```fsharp
+
+let document = Document.toDoc [
+    addH1 "FuncyDown is fancy!"
+    addParagraph "Lemonade was a popular drink, and it still is!"
+]
+        
+```
+### Render Document
+
+The render function writes directly to a Markdown string.
+
+```fsharp
+
+let markdown = Document.render [
+  addH1 "FuncyDown is fancy!"
+  addParagraph "Lemonade was a popular drink, and it still is!"
+]
+        
+```
 ### Export to string
 
 To save the generated Markdown document on disk or use it otherwise, you can export the document to a formatted Markdown string.
