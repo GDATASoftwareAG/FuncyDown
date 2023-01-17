@@ -20,7 +20,7 @@ let ``addBlockQuote appends a given block quote to the document`` () =
 
 [<Fact>]
 let ``asString returns a formatted block quote given a block quote`` () =
-    let expected = "> Some quote" + System.Environment.NewLine
+    let expected = "> Some quote" + System.Environment.NewLine + System.Environment.NewLine
     let document = addBlockQuote quote emptyDocument
     
     let actual = document |> asString

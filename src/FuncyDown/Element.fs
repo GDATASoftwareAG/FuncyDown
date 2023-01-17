@@ -114,7 +114,7 @@ module Element =
         | Some lang -> sprintf $"```{lang}{Environment.NewLine}{code.Code}{Environment.NewLine}```{Environment.NewLine}"     
 
     let blockQuoteAsString quote =
-        sprintf $"> {quote}{Environment.NewLine}" 
+        sprintf $"> {quote}{Environment.NewLine}{Environment.NewLine}" 
 
     let horizontalRuleAsString =
         sprintf $"---{Environment.NewLine}" 
